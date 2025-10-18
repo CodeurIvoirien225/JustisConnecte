@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'pgroupeb_JustisConnect' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'pgroupeb_abass' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'SYSCOA90' );
+define( 'DB_PASSWORD', '~rGeF2p,EdrPlT*l' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost:3306' );
