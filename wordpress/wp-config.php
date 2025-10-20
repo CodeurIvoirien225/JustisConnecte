@@ -89,6 +89,8 @@ define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
 
+define('WP_HOME', 'https://justisconnecte.onrender.com');
+define('WP_SITEURL', 'https://justisconnecte.onrender.com');
 
 
 /* That's all, stop editing! Happy publishing. */
