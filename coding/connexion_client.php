@@ -1,8 +1,9 @@
 
 
 <?php
-require __DIR__ . '/config/config.php';
 session_start();
+require __DIR__ . '/config/config.php';
+
 
 // Gestion de la déconnexion
 if (isset($_GET['logout'])) {
