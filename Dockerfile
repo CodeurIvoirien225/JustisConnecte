@@ -1,17 +1,17 @@
 FROM wordpress:6.6-php8.1-apache
 
-# Copier le code WordPress et le sous-dossier coding
+# Copier WordPress et ton code
 COPY wordpress/ /var/www/html/
 COPY coding/ /var/www/html/coding/
 
-# Activer le module mod_rewrite pour Apache
+# Activer le module mod_rewrite
 RUN a2enmod rewrite
 
-# Copier la configuration Apache personnalisée
-COPY allow-htaccess.conf /etc/apache2/conf-available/allow-htaccess.conf
-
-# Activer cette configuration
-RUN a2enconf allow-htaccess
+# Autoriser .htaccess pour /var/www/html
+RUN echo '<Directory /var/www/html/>\n\
+    AllowOverride All\n\
+</Directory>' > /etc/apache2/conf-available/allow-htaccess.conf && \
+    a2enconf allow-htaccess
 
 # Exposer le port HTTP
 EXPOSE 80
