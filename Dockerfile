@@ -20,5 +20,10 @@ RUN chmod +x /entrypoint.sh
 # Exposer le port HTTP
 EXPOSE 80
 
+
+# Installer le driver PDO MySQL
+RUN apt-get update && apt-get install -y default-mysql-client \
+    && docker-php-ext-install pdo pdo_mysql
+
 # Utiliser le script d'entrypoint au démarrage
 CMD ["/entrypoint.sh"]
