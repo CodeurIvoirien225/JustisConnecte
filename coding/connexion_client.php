@@ -1,7 +1,6 @@
 <?php
-session_start();
 require __DIR__ . '/config/config.php';
-
+session_start();
 
 // Gestion de la déconnexion
 if (isset($_GET['logout'])) {
@@ -201,7 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </a>
             <div class="d-flex">
                 <a href="inscription_client.php" class="btn btn-outline-primary me-2">Inscription</a>
-                <a href="https://justisconnecte.onrender.com/coding/fil_actualite.php" class="btn btn-primary">
+                <a href="https://p6-groupeb.com/abass/wordpress/" class="btn btn-primary">
                     <i class="fas fa-home me-1"></i> Accueil
                 </a>
             </div>
