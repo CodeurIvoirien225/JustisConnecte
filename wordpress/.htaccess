@@ -1,16 +1,12 @@
-
-# BEGIN WordPress
-# Les directives (lignes) entre « BEGIN WordPress » et « END WordPress » sont générées
-# dynamiquement, et doivent être modifiées uniquement via les filtres WordPress.
-# Toute modification des directives situées entre ces marqueurs sera surchargée.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /avocat-client/wordpress/
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
+
+# 🚫 Ignore le dossier /coding
+RewriteCond %{REQUEST_URI} !^/coding/
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /avocat-client/wordpress/index.php [L]
+RewriteRule . /index.php [L]
 </IfModule>
-
-# END WordPress
