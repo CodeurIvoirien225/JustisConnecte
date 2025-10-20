@@ -29,7 +29,7 @@ define( 'DB_USER', 'pgroupeb_abass' );
 define( 'DB_PASSWORD', '~rGeF2p,EdrPlT*l' );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost:3306' );
+define( 'DB_HOST', '91.204.209.25' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
