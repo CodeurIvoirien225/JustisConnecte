@@ -1,17 +1,19 @@
-# Utilise l’image PHP + Apache officielle
-FROM php:8.1-apache
-
-# Copie les fichiers PHP dans le serveur Apache
-COPY coding/ /var/www/html/
-
-# Expose le port 80
-EXPOSE 80
-
-
 FROM wordpress:6.6-php8.1-apache
 
-# Copier tout le contenu WordPress
+# Copie WordPress
 COPY wordpress/ /var/www/html/
 
-# Expose le port 80
+# Copie ton dossier PHP
+COPY coding/ /var/www/html/coding/
+
+# Active mod_rewrite
+RUN a2enmod rewrite
+
+# Active .htaccess
+RUN bash -c 'echo "<Directory /var/www/html/>\n\
+    AllowOverride All\n\
+    Require all granted\n\
+</Directory>" > /etc/apache2/conf-available/allow-htaccess.conf' \
+    && a2enconf allow-htaccess
+
 EXPOSE 80
