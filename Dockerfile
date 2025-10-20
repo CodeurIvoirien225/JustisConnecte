@@ -13,5 +13,12 @@ RUN echo '<Directory /var/www/html/>\n\
 </Directory>' > /etc/apache2/conf-available/allow-htaccess.conf && \
     a2enconf allow-htaccess
 
+# Copier le script d'initialisation pour créer config.php au démarrage
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 # Exposer le port HTTP
 EXPOSE 80
+
+# Utiliser le script d'entrypoint au démarrage
+CMD ["/entrypoint.sh"]
